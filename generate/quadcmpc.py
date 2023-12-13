@@ -4,7 +4,11 @@
 # Copyright 2023 Inria
 # SPDX-License-Identifier: Apache-2.0
 
-"""Generate QUADCMPC problems of the test set."""
+"""
+Generate QUADCMPC problems of the test set.
+
+Make sure you clone submodules in order to run this script.
+"""
 
 from os import path
 
@@ -13,7 +17,7 @@ from qpsolvers import Problem
 from quadruped_qp_problems.centroidalMPC import CentroidalQuadruped
 
 DATA_DIR = path.realpath(
-    path.join(path.dirname(path.realpath(__file__)), "../data")
+    path.join(path.dirname(path.abspath(__file__)), "../data")
 )
 
 

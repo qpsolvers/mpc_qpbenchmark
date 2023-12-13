@@ -4,11 +4,12 @@
 # Copyright 2023 Inria
 # SPDX-License-Identifier: Apache-2.0
 
+"""Generate QUADCMPC problems of the test set."""
+
 from os import path
 
 import numpy as np
 from qpsolvers import Problem
-
 from quadruped_qp_problems.centroidalMPC import CentroidalQuadruped
 
 DATA_DIR = path.realpath(
@@ -34,30 +35,35 @@ def generate_problem(name: str, gait: np.ndarray, v_ref: np.ndarray):
 
 
 if __name__ == "__main__":
-    gait = np.array(
-        [
-            [8, 1, 0, 0, 1],
-            [8, 0, 1, 1, 0],
-            [8, 1, 0, 0, 1],
-            [8, 0, 1, 1, 0],
-        ]
+    generate_problem(
+        "QUADCMPC1",
+        gait=np.array(
+            [
+                [8, 1, 0, 0, 1],
+                [8, 0, 1, 1, 0],
+                [8, 1, 0, 0, 1],
+                [8, 0, 1, 1, 0],
+            ]
+        ),
+        v_ref=np.array([0.1, 0.0, 0.0]).reshape((-1, 1)),
     )
-    v_ref = np.array([0.1, 0.0, 0.0]).reshape((-1, 1))
-    generate_problem("QUADCMPC1", gait, v_ref)
-
-    gait = np.array(
-        [
-            [12, 1, 0, 0, 1],
-            [12, 0, 1, 1, 0],
-        ]
+    generate_problem(
+        "QUADCMPC2",
+        gait=np.array(
+            [
+                [12, 1, 0, 0, 1],
+                [12, 0, 1, 1, 0],
+            ]
+        ),
+        v_ref=np.array([0.1, 0.0, 0.0]).reshape((-1, 1)),
     )
-    v_ref = np.array([0.1, 0.0, 0.0]).reshape((-1, 1))
-    generate_problem("QUADCMPC2", gait, v_ref)
-
-    gait = np.array([[16, 1, 1, 1, 1]])
-    vref = np.zeros((3, 1))
-    generate_problem("QUADCMPC3", gait, v_ref)
-
-    gait = np.array([[8, 1, 0, 0, 1], [8, 0, 1, 1, 0]])
-    vref = np.zeros((3, 1))
-    generate_problem("QUADCMPC4", gait, v_ref)
+    generate_problem(
+        "QUADCMPC3",
+        gait=np.array([[16, 1, 1, 1, 1]]),
+        v_ref=np.zeros((3, 1)),
+    )
+    generate_problem(
+        "QUADCMPC4",
+        gait=np.array([[8, 1, 0, 0, 1], [8, 0, 1, 1, 0]]),
+        v_ref=np.zeros((3, 1)),
+    )

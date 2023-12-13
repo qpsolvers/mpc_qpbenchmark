@@ -23,7 +23,7 @@ qpbenchmark ./mpc.py run
 
 The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). Here is the report generated on a reference computer:
 
-📈 **[MPC test set results](results/mpc_ref.md)**
+📈 **[MPC test set results](results/mpc_qpbenchmark_ref.md)**
 
 You can check out results from various machines and share your own in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).
 

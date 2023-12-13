@@ -31,9 +31,9 @@ The outcome is a standardized report comparing all available solvers against the
 
 The problems in this test set have been contributed by:
 
-| Problems | Contributor | Issue | References |
-|----------|-------------|-------|------------|
-| ``QUADCMPC*`` | [@paLeziart](https://github.com/paLeziart) | [#93](https://github.com/qpsolvers/qpbenchmark/issues/93) | [paper](https://laas.hal.science/tel-03936109/document) |
+| Problems | Contributor | Details |
+|----------|-------------|---------|
+| ``QUADCMPC*`` | [@paLeziart](https://github.com/paLeziart) | [proposal](https://github.com/qpsolvers/qpbenchmark/issues/93), [paper](https://laas.hal.science/tel-03936109/document) |
 
 ## Citation
 

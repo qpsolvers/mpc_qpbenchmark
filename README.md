@@ -15,10 +15,10 @@ It is also possible to install the benchmark [from PyPI](https://github.com/qpso
 
 ## Usage
 
-Once you have [installed qpbenchmark](https://github.com/qpsolvers/qpbenchmark#installation), you can run the test set as follows:
+Run the test set as follows:
 
 ```
-qpbenchmark ./mpc.py run
+qpbenchmark ./mpc_qpbenchmark.py run
 ```
 
 The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). Here is the report generated on a reference computer:

@@ -1,0 +1,3 @@
+[submodule "generate/quadruped-qp-problems"]
+	path = generate/quadruped_qp_problems
+	url = https://gitlab.laas.fr/paleziart/quadruped-qp-problems.git

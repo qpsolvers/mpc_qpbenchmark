@@ -2,6 +2,10 @@
 
 This repository contains quadratic programs (QPs) arising from model predictive control in robotics, in a format suitable for [qpbenchmark](https://github.com/qpsolvers/qpbenchmark).
 
+<div align=center>
+  📈 <a href="results/mpc_qpbenchmark_ref.md"><strong>MPC test set results</strong></a>
+</div>
+
 ## Installation
 
 The recommended process is to install the benchmark and all solvers in an isolated environment using ``conda``:
@@ -21,11 +25,7 @@ Run the test set as follows:
 qpbenchmark ./mpc_qpbenchmark.py run
 ```
 
-The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). Here is the report generated on a reference computer:
-
-📈 **[MPC test set results](results/mpc_qpbenchmark_ref.md)**
-
-You can check out results from various machines and share your own in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).
+The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). You can check out and post your own results in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).
 
 ## Citation
 

@@ -27,6 +27,14 @@ qpbenchmark ./mpc_qpbenchmark.py run
 
 The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). You can check out and post your own results in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).
 
+## Contributions
+
+The problems in this test set have been contributed by:
+
+| Problems | Contributor | Issue | References |
+|----------|-------------|-------|------------|
+| ``QUADCMPC*`` | [@paLeziart](https://github.com/paLeziart) | [#93](https://github.com/qpsolvers/qpbenchmark/issues/93) | [paper](https://laas.hal.science/tel-03936109/document) |
+
 ## Citation
 
 If you use `qpbenchmark` in your scientific works, please cite it *e.g.* as follows:

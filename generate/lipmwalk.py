@@ -2,25 +2,14 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright 2022 Stéphane Caron
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Copyright 2023 Inria
+# SPDX-License-Identifier: Apache-2.0
 
 """Model predictive control part of the LIPM walking controller.
 
 See also: https://github.com/stephane-caron/lipm_walking_controller/
 """
 
-import argparse
 import logging
 import os
 from dataclasses import dataclass
@@ -270,18 +259,6 @@ def plot_plan(t, live_plot, params, mpc_problem, plan) -> None:
     live_plot.update_line("zmp_max", trange, zmp_max)
 
 
-def parse_command_line_arguments() -> argparse.Namespace:
-    """Parse command-line arguments."""
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--slowdown",
-        help="Slow time down by a multiplicative factor",
-        type=float,
-        default=1.0,
-    )
-    return parser.parse_args()
-
-
 def save_problem(problem: Problem, name: str) -> None:
     script_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.realpath(os.path.join(script_dir, "../data"))
@@ -291,7 +268,6 @@ def save_problem(problem: Problem, name: str) -> None:
 
 
 if __name__ == "__main__":
-    args = parse_command_line_arguments()
     params = Parameters()
     mpc_problem = build_mpc_problem(params)
     T = params.sampling_period
@@ -303,7 +279,6 @@ if __name__ == "__main__":
     # "initial state is unfeasible: G_0 * x <= h_0 with ..." is expected.
     # It happens at the beginning of every double-support phase.
     logging.disable(logging.WARNING)
-
 
     live_plot = LivePlot(
         xlim=(0, horizon_duration + T),
@@ -318,7 +293,7 @@ if __name__ == "__main__":
     live_plot.add_line("zmp_min", "g:")
     live_plot.add_line("zmp_max", "b:")
 
-    rate = RateLimiter(frequency=1.0 / (args.slowdown * dt), warn=False)
+    rate = RateLimiter(frequency=1.0 / dt, warn=False)
     t = 0.0
 
     phase = PhaseStepper(params)

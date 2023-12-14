@@ -1,6 +1,6 @@
 ---
 name: Submit a new problem
-about: Propose a new problem for the GitHub-FFA test set
+about: Propose a new problem for the MPC test set
 title: ''
 labels: ''
 assignees: ''
@@ -8,30 +8,44 @@ assignees: ''
 
 ### Problem
 
-I propose to add the following problem to the MPC test set. The problem can be built and tested as follows:
+I propose to add the following problems to the MPC test set. The problems can be generated as follows:
+
+<!--
+    Make sure you fill out the <FIELDS>:
+
+    - COPYRIGHT_HOLDER: you or your employer
+    - DESCRIPTION: Describe your problem for interested readers.
+    - PROBLEM_CODE: Name your problem in up to eight capital letters.
+-->
 
 ```python
-import numpy as np
-import qpsolvers
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+# Copyright 2023 <COPYRIGHT_HOLDER>
+# SPDX-License-Identifier: Apache-2.0
 
-def build_problem():
-    # Cost: x^T P x + q^T x
-    P = ...
-    q = ...
-    # Inequality constraints: G x <= h
-    G = ...
-    h = ...
-    # Equality constraints: A x == b
-    A = ...
-    b = ...
-    # Box constraints: lb <= x <= ub
-    lb = ...
-    ub = ...
-    return qpsolvers.Problem(P, q, G, h, A, b, lb, ub)
+"""<DESCRIPTION>"""
+
+from os import path
+
+from qpbenchmark.problem import Problem
 
 if __name__ == "__main__":
-    solver = "proxqp"  # your favorite solver here
-    x = qpsolvers.solve_problem(build_problem(), solver=solver)
+    problem = Problem(
+        P=...,
+        q=...,
+        G=..,
+        h=..,
+        A=...,
+        b=...,
+        lb=...,
+        ub=...,
+        name="<PROBLEM_CODE>",
+    )
+    script_dir = path.dirname(path.abspath(__file__))
+    data_dir = path.realpath(path.join(script_dir, "../data"))
+    problem.save(f"{data_dir}/{problem.name}.npz")
 ```
 
 ### Context
@@ -41,7 +55,7 @@ if __name__ == "__main__":
     it to the benchmark?
 -->
 
-This problem is interesting because...
+These problems arose from model predictive control of...
 
 ### References
 

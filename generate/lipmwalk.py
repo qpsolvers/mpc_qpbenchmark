@@ -15,7 +15,7 @@ import os
 from dataclasses import dataclass
 
 import numpy as np
-from qpsolvers import Problem, solve_problem
+import qpsolvers
 
 try:
     from loop_rate_limiters import RateLimiter
@@ -259,7 +259,7 @@ def plot_plan(t, live_plot, params, mpc_problem, plan) -> None:
     live_plot.update_line("zmp_max", trange, zmp_max)
 
 
-def save_problem(problem: Problem, name: str) -> None:
+def save_problem(problem: qpsolvers.Problem, name: str) -> None:
     script_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.realpath(os.path.join(script_dir, "../data"))
     save_path = f"{data_dir}/{name}.npz"
@@ -314,7 +314,7 @@ if __name__ == "__main__":
 
         save_problem(mpc_qp.problem, f"LIPMWALK{i}")
 
-        qpsol = solve_problem(mpc_qp.problem, solver="quadprog")
+        qpsol = qpsolvers.solve_problem(mpc_qp.problem, solver="quadprog")
         plan = Plan(mpc_problem, qpsol)
         plot_plan(t, live_plot, params, mpc_problem, plan)
         for step in range(substeps):

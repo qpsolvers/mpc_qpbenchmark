@@ -74,10 +74,10 @@ class MpcQpbenchmark(TestSet):
         self.__add_known_solver_timeouts()
 
     def __add_known_solver_issues(self):
-        pass
+        """See how this is done in the maros_meszaros_qpbenchmark."""
 
     def __add_known_solver_timeouts(self):
-        pass
+        """See how this is done in the maros_meszaros_qpbenchmark."""
 
     def __iter__(self) -> Iterator[Problem]:
         """Iterate over test set problems."""

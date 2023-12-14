@@ -1,10 +1,11 @@
 # Model predictive control test set
 
-| Benchmark version | 2.1.0rc0 |
-|:------------------|:--------------------|
-| Date              | 2023-12-14 14:02:00.277664+00:00 |
-| CPU               | [Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz](#cpu-info) |
-| Run by            | [@stephane-caron](https://github.com/stephane-caron/) |
+| Number of problems | 64       |
+|:-------------------|:--------------------|
+| Benchmark version  | 2.1.0rc1 |
+| Date               | 2023-12-14 14:34:57.347883+00:00              |
+| CPU                | [Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz](#cpu-info) |
+| Run by             | [@stephane-caron](https://github.com/stephane-caron/) |
 
 Benchmark reports are copious as we aim to document comparison factors as much as possible. You can also [jump to results](#results-by-settings) directly.
 

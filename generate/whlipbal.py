@@ -16,15 +16,18 @@ import numpy as np
 import qpsolvers
 
 try:
+    import qpmpc
     from loop_rate_limiters import RateLimiter
-    from qpmpc import MPCQP, Plan
     from qpmpc.live_plots import WheeledInvertedPendulumPlot
     from qpmpc.systems import WheeledInvertedPendulum
-except ImportError:
+
+    if tuple(map(int, (qpmpc.__version__.split(".")))) < (3, 0, 1):
+        raise ImportError("Version {qpmpc.__version__} < 3.0.1")
+except ImportError as exn:
     raise ImportError(
-        "This example requires qpmpc (with extras): "
+        "This example requires qpmpc >= 3.0.1 (with extras): "
         "you can install it by `pip install qpmpc[extras]`"
-    )
+    ) from exn
 
 
 NB_SUBSTEPS: int = 15  # number of integration substeps
@@ -83,10 +86,10 @@ if __name__ == "__main__":
         mpc_problem.update_target_states(
             target_states[: -WheeledInvertedPendulum.STATE_DIM]
         )
-        mpc_qp = MPCQP(mpc_problem, sparse=False)
+        mpc_qp = qpmpc.MPCQP(mpc_problem, sparse=False)
         save_problem(mpc_qp.problem, f"WHLIPBAL{i}")
         qpsol = qpsolvers.solve_problem(mpc_qp.problem, solver="proxqp")
-        plan = Plan(mpc_problem, qpsol)
+        plan = qpmpc.Plan(mpc_problem, qpsol)
         for step in range(NB_SUBSTEPS):
             state = pendulum.integrate(state, plan.first_input, dt)
             live_plot.update(

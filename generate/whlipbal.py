@@ -81,7 +81,6 @@ if __name__ == "__main__":
             target_states[-WheeledInvertedPendulum.STATE_DIM :]
         )
         mpc_problem.update_target_states(
-
             target_states[: -WheeledInvertedPendulum.STATE_DIM]
         )
         mpc_qp = MPCQP(mpc_problem, sparse=False)

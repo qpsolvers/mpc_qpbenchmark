@@ -83,7 +83,4 @@ class MpcQpbenchmark(TestSet):
         """Iterate over test set problems."""
         for fname in os.listdir(self.data_dir):
             if fname.endswith(".npz"):
-                yield Problem.load(
-                    os.path.join(self.data_dir, fname),
-                    name=os.path.basename(fname)[:-4],
-                )
+                yield Problem.load(os.path.join(self.data_dir, fname))

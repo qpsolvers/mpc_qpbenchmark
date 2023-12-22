@@ -9,12 +9,11 @@
 import os.path
 from typing import Iterator
 
-from qpbenchmark.problem import Problem
-from qpbenchmark.test_set import TestSet
-from qpbenchmark.tolerance import Tolerance
+import qpbenchmark
+from qpbenchmark import Problem
 
 
-class MpcQpbenchmark(TestSet):
+class MpcQpbenchmark(qpbenchmark.TestSet):
     """Model predictive control test set."""
 
     data_dir: str
@@ -30,39 +29,6 @@ class MpcQpbenchmark(TestSet):
     @property
     def sparse_only(self) -> bool:
         return False
-
-    def define_tolerances(self, runtime: float = 10.0) -> None:
-        """Define test set tolerances.
-
-        Args:
-            runtime: Maximum QP solver runtime in seconds.
-        """
-        self.tolerances = {
-            "default": Tolerance(
-                primal=1.0,
-                dual=1.0,
-                gap=1.0,
-                runtime=runtime,
-            ),
-            "high_accuracy": Tolerance(
-                primal=1e-9,
-                dual=1e-9,
-                gap=1e-9,
-                runtime=runtime,
-            ),
-            "low_accuracy": Tolerance(
-                primal=1e-3,
-                dual=1e-3,
-                gap=1e-3,
-                runtime=runtime,
-            ),
-            "mid_accuracy": Tolerance(
-                primal=1e-6,
-                dual=1e-6,
-                gap=1e-6,
-                runtime=runtime,
-            ),
-        }
 
     def __init__(self):
         """Initialize test set."""

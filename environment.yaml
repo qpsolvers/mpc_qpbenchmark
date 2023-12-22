@@ -22,5 +22,5 @@ dependencies:
         - highspy >= 1.5.2
         - py-cpuinfo
         - qpalm >= 1.2.1
-        - qpbenchmark >= 2.1.0
+        - qpbenchmark >= 2.1.1
         - scs >= 3.2.2

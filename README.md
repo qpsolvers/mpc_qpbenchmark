@@ -42,15 +42,13 @@ The problems in this test set have been contributed by:
 If you use `qpbenchmark` in your scientific works, please cite it *e.g.* as follows:
 
 ```bibtex
-@software{qpbenchmark2023,
+@software{qpbenchmark2024,
   author = {Caron, Stéphane and Zaki, Akram and Otta, Pavel and Arnström, Daniel and Carpentier, Justin},
   license = {Apache-2.0},
-  month = dec,
+  month = jan,
   title = {{qpbenchmark: Benchmark for quadratic programming solvers available in Python}},
   url = {https://github.com/qpsolvers/qpbenchmark},
-  version = {2.0.0},
-  year = {2023}
+  version = {2.2.0},
+  year = {2024}
 }
 ```
-
-You can also click on ``Cite this repository`` at the top-right of the [repository page](https://github.com/qpsolvers/qpbenchmark/).

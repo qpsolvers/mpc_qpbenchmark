@@ -10,6 +10,7 @@ import os.path
 from typing import Iterator
 
 import qpbenchmark
+from qpbenchmark.benchmark import main
 from qpbenchmark import Problem
 
 
@@ -50,3 +51,7 @@ class MpcQpbenchmark(qpbenchmark.TestSet):
         for fname in os.listdir(self.data_dir):
             if fname.endswith(".npz"):
                 yield Problem.load(os.path.join(self.data_dir, fname))
+
+
+if __name__ == "__main__":
+    main(test_set_path=os.path.abspath(__file__))

@@ -63,7 +63,12 @@ def save_problem(problem: qpsolvers.Problem, name: str) -> None:
 
 
 if __name__ == "__main__":
-    pendulum = WheeledInvertedPendulum()
+    pendulum = WheeledInvertedPendulum(
+        length=0.58,
+        max_ground_accel=10.0,
+        nb_timesteps=50,
+        sampling_period=0.02,
+    )
     live_plot = WheeledInvertedPendulumPlot(pendulum, order="velocities")
     mpc_problem = WheeledInvertedPendulum.build_mpc_problem(
         pendulum,

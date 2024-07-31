@@ -39,16 +39,15 @@ The problems in this test set have been contributed by:
 
 ## Citation
 
-If you use `qpbenchmark` in your scientific works, please cite it *e.g.* as follows:
+If you use `qpbenchmark` in your works, please cite all its contributors as follows:
 
 ```bibtex
 @software{qpbenchmark2024,
-  author = {Caron, Stéphane and Zaki, Akram and Otta, Pavel and Arnström, Daniel and Carpentier, Justin},
-  license = {Apache-2.0},
-  month = jan,
   title = {{qpbenchmark: Benchmark for quadratic programming solvers available in Python}},
+  author = {Caron, Stéphane and Zaki, Akram and Otta, Pavel and Arnström, Daniel and Carpentier, Justin and Yang, Fengyu and Leziart, Pierre-Alexandre},
   url = {https://github.com/qpsolvers/qpbenchmark},
-  version = {2.2.0},
+  license = {Apache-2.0},
+  version = {2.2.2},
   year = {2024}
 }
 ```

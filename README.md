@@ -22,7 +22,7 @@ It is also possible to install the benchmark [from PyPI](https://github.com/qpso
 Run the test set as follows:
 
 ```
-qpbenchmark ./mpc_qpbenchmark.py run
+python ./mpc_qpbenchmark.py run
 ```
 
 The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). You can check out and post your own results in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).

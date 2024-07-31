@@ -2,8 +2,8 @@
 
 | Number of problems | 64 |
 |:-------------------|:--------------------|
-| Benchmark version  | 2.1.0 |
-| Date               | 2023-12-21 15:09:20.204446+00:00 |
+| Benchmark version  | 2.2.1 |
+| Date               | 2024-07-31 07:50:24.542895+00:00 |
 | CPU                | [Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz](#cpu-info) |
 | Run by             | [@stephane-caron](https://github.com/stephane-caron/) |
 
@@ -42,6 +42,7 @@ Problems arising from model predictive control in robotics.
 | daqp     | 0.5.1     |
 | ecos     | 2.0.11    |
 | highs    | 1.5.3     |
+| hpipm    | 0.2       |
 | osqp     | 0.6.3     |
 | piqp     | 0.2.3     |
 | proxqp   | 0.6.1     |
@@ -50,7 +51,7 @@ Problems arising from model predictive control in robotics.
 | quadprog | 0.1.11    |
 | scs      | 3.2.3     |
 
-All solvers were called via [qpsolvers](https://github.com/qpsolvers/qpsolvers) v4.2.0.
+All solvers were called via [qpsolvers](https://github.com/qpsolvers/qpsolvers) v4.2.0 (and v4.3.2 for HPIPM).
 
 ## CPU info
 
@@ -102,6 +103,10 @@ Solvers for each settings are configured as follows:
 | highs    | ``dual_feasibility_tolerance``   | -         | 1e-09           | 0.001          | 1e-06          |
 | highs    | ``primal_feasibility_tolerance`` | -         | 1e-09           | 0.001          | 1e-06          |
 | highs    | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
+| hpipm    | ``tol_comp``                     | -         | 1e-09           | 0.001          | 1e-06          |
+| hpipm    | ``tol_eq``                       | -         | 1e-09           | 0.001          | 1e-06          |
+| hpipm    | ``tol_ineq``                     | -         | 1e-09           | 0.001          | 1e-06          |
+| hpipm    | ``tol_stat``                     | -         | 1e-09           | 0.001          | 1e-06          |
 | osqp     | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
 | osqp     | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
 | osqp     | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
@@ -144,6 +149,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | daqp     |                                93.8 |                                769.6 |                             8408591722842.2 |                              48634023.9 |                              8600.2 |
 | ecos     |                                51.6 |                               5903.9 |                            57742209839725.0 |                             343974925.3 |                             73029.9 |
 | highs    |                                93.8 |                                774.5 |                             8408591722843.5 |                              48684542.1 |                              8610.6 |
+| hpipm    |                                85.9 |                               1423.5 |                            38127600805768.5 |                              85300134.9 |                             15084.0 |
 | osqp     |                                96.9 |                                  1.8 |                               28845300900.2 |                             136955634.4 |                             57709.6 |
 | piqp     |                                95.3 |                                576.1 |                             6301745617656.5 |                              36448352.7 |                              6445.4 |
 | proxqp   |                               100.0 |                                 14.7 |                                 135890317.5 |                                   765.6 |                                22.8 |
@@ -163,6 +169,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | daqp     |                                93.8 |                                391.3 |                                      8796.5 |                                    18.6 |                                 2.0 |
 | ecos     |                                 0.0 |                               3001.9 |                                     59374.0 |                            2110319364.4 |                        1590212143.2 |
 | highs    |                                 0.0 |                                393.3 |                                      8799.0 |                              18317502.4 |                           2234518.5 |
+| hpipm    |                                81.2 |                                907.1 |                                     19791.5 |                                    41.8 |                                 9.9 |
 | osqp     |                                89.1 |                                492.3 |                                     13502.8 |                                    68.2 |                                 6.7 |
 | piqp     |                                95.3 |                                293.0 |                                      6597.8 |                                    15.3 |                                 5.3 |
 | proxqp   |                               100.0 |                                 75.3 |                                      6719.8 |                                    70.3 |                                 6.6 |
@@ -182,6 +189,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | daqp     |                                93.8 |                                804.9 |                                 170548298.9 |                               6239177.7 |                             18631.8 |
 | ecos     |                                45.3 |                               6174.2 |                                1006303588.5 |                            1220573917.7 |                          27923922.9 |
 | highs    |                                89.1 |                                807.9 |                                 149079334.5 |                              12398100.6 |                             40016.1 |
+| hpipm    |                                37.5 |                               1649.0 |                                 298159606.5 |                              12478492.9 |                           1074516.3 |
 | osqp     |                                87.5 |                                  2.4 |                                 245401101.9 |                               9775810.2 |                            353876.0 |
 | piqp     |                               100.0 |                                 13.0 |                                       101.7 |                               1446006.3 |                             42008.3 |
 | proxqp   |                               100.0 |                                 17.6 |                                 321704771.1 |                              10990264.8 |                             79987.6 |
@@ -201,6 +209,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | daqp     |                                93.8 |                                575.0 |                                   5864062.3 |                                   369.2 |                                 2.3 |
 | ecos     |                                 4.7 |                               4411.1 |                                  39582417.7 |                              69733106.5 |                           3479356.7 |
 | highs    |                                39.1 |                                577.3 |                                   5864063.5 |                                364812.1 |                              2679.0 |
+| hpipm    |                                71.9 |                               1178.3 |                                  11728355.3 |                                   740.3 |                                41.6 |
 | osqp     |                                89.1 |                                576.8 |                                  12424574.0 |                                  1553.8 |                                10.0 |
 | piqp     |                                96.9 |                                287.1 |                                   2932031.8 |                                   217.7 |                                 8.9 |
 | proxqp   |                               100.0 |                                 31.9 |                                   4075011.8 |                                  1648.0 |                                 8.8 |
@@ -222,6 +231,7 @@ Precentage of problems each solver is able to solve:
 | daqp     |        94 |              94 |             94 |             94 |
 | ecos     |        52 |               0 |             45 |              5 |
 | highs    |        94 |               0 |             89 |             39 |
+| hpipm    |        86 |              81 |             38 |             72 |
 | osqp     |        97 |              89 |             88 |             89 |
 | piqp     |        95 |              95 |            100 |             97 |
 | proxqp   |       100 |             100 |            100 |            100 |
@@ -241,6 +251,7 @@ Percentage of problems where "solved" return codes are correct:
 | daqp     |       100 |             100 |            100 |            100 |
 | ecos     |        94 |              42 |             88 |             47 |
 | highs    |       100 |               6 |             95 |             45 |
+| hpipm    |        97 |              95 |             50 |             84 |
 | osqp     |        97 |              97 |             88 |             95 |
 | piqp     |       100 |             100 |            100 |            100 |
 | proxqp   |       100 |             100 |            100 |            100 |
@@ -262,6 +273,7 @@ Shifted geometric mean of solver computation times (1.0 is the best):
 | daqp     |     769.6 |           391.3 |          804.9 |          575.0 |
 | ecos     |    5903.9 |          3001.9 |         6174.2 |         4411.1 |
 | highs    |     774.5 |           393.3 |          807.9 |          577.3 |
+| hpipm    |    1423.5 |           907.1 |         1649.0 |         1178.3 |
 | osqp     |       1.8 |           492.3 |            2.4 |          576.8 |
 | piqp     |     576.1 |           293.0 |           13.0 |          287.1 |
 | proxqp   |      14.7 |            75.3 |           17.6 |           31.9 |
@@ -287,6 +299,7 @@ Shifted geometric means of primal residuals (1.0 is the best):
 | daqp     |  8408591722842.2 |          8796.5 |    170548298.9 |      5864062.3 |
 | ecos     | 57742209839725.0 |         59374.0 |   1006303588.5 |     39582417.7 |
 | highs    |  8408591722843.5 |          8799.0 |    149079334.5 |      5864063.5 |
+| hpipm    | 38127600805768.5 |         19791.5 |    298159606.5 |     11728355.3 |
 | osqp     |    28845300900.2 |         13502.8 |    245401101.9 |     12424574.0 |
 | piqp     |  6301745617656.5 |          6597.8 |          101.7 |      2932031.8 |
 | proxqp   |      135890317.5 |          6719.8 |    321704771.1 |      4075011.8 |
@@ -310,6 +323,7 @@ Shifted geometric means of dual residuals (1.0 is the best):
 | daqp     |  48634023.9 |            18.6 |      6239177.7 |          369.2 |
 | ecos     | 343974925.3 |    2110319364.4 |   1220573917.7 |     69733106.5 |
 | highs    |  48684542.1 |      18317502.4 |     12398100.6 |       364812.1 |
+| hpipm    |  85300134.9 |            41.8 |     12478492.9 |          740.3 |
 | osqp     | 136955634.4 |            68.2 |      9775810.2 |         1553.8 |
 | piqp     |  36448352.7 |            15.3 |      1446006.3 |          217.7 |
 | proxqp   |       765.6 |            70.3 |     10990264.8 |         1648.0 |
@@ -333,6 +347,7 @@ Shifted geometric means of duality gaps (1.0 is the best):
 | daqp     |    8600.2 |             2.0 |        18631.8 |            2.3 |
 | ecos     |   73029.9 |    1590212143.2 |     27923922.9 |      3479356.7 |
 | highs    |    8610.6 |       2234518.5 |        40016.1 |         2679.0 |
+| hpipm    |   15084.0 |             9.9 |      1074516.3 |           41.6 |
 | osqp     |   57709.6 |             6.7 |       353876.0 |           10.0 |
 | piqp     |    6445.4 |             5.3 |        42008.3 |            8.9 |
 | proxqp   |      22.8 |             6.6 |        79987.6 |            8.8 |

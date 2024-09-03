@@ -2,9 +2,7 @@
 
 This repository contains quadratic programs (QPs) arising from model predictive control in robotics, in a format suitable for [qpbenchmark](https://github.com/qpsolvers/qpbenchmark). Here is the report produced by this benchmarking tool:
 
-<p align=center>
-  📈 <a href="results/mpc_qpbenchmark.md"><strong>MPC test set results</strong></a>
-</p>
+- 📈 <a href="results/mpc_qpbenchmark.md"><strong>MPC test set results</strong></a>
 
 ## Installation
 
@@ -47,7 +45,14 @@ If you use `qpbenchmark` in your works, please cite all its contributors as foll
   author = {Caron, Stéphane and Zaki, Akram and Otta, Pavel and Arnström, Daniel and Carpentier, Justin and Yang, Fengyu and Leziart, Pierre-Alexandre},
   url = {https://github.com/qpsolvers/qpbenchmark},
   license = {Apache-2.0},
-  version = {2.2.2},
+  version = {2.3.0},
   year = {2024}
 }
 ```
+
+## See also
+
+Related test sets that may be relevant to your use cases:
+
+- [Free-for-all](https://github.com/qpsolvers/free_for_all_qpbenchmark): community-built test set, new problems welcome!
+- [Maros-Meszaros test set](https://github.com/qpsolvers/maros_meszaros_qpbenchmark/): a standard test set with problems designed to be difficult.

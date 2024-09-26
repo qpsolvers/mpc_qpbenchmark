@@ -2,7 +2,7 @@
 
 This repository contains quadratic programs (QPs) arising from model predictive control in robotics, in a format suitable for [qpbenchmark](https://github.com/qpsolvers/qpbenchmark). Here is the report produced by this benchmarking tool:
 
-- 📈 <a href="results/mpc_qpbenchmark.md"><strong>MPC test set results</strong></a>
+- 📈 <a href="https://github.com/qpsolvers/mpc_qpbenchmark/results/mpc_qpbenchmark.md"><strong>MPC test set results</strong></a>
 
 ## Installation
 

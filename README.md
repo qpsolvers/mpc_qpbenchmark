@@ -35,6 +35,17 @@ The problems in this test set have been contributed by:
 | ``LIPMWALK*`` | [@stephane-caron](https://github.com/stephane-caron) | Proposed in [#3](https://github.com/qpsolvers/mpc_qpbenchmark/issues/3), details in [this paper](https://hal.archives-ouvertes.fr/hal-01875387/document) |
 | ``WHLIPBAL*`` | [@stephane-caron](https://github.com/stephane-caron) | Proposed in [#4](https://github.com/qpsolvers/mpc_qpbenchmark/issues/4), details in [this paper](https://inria.hal.science/hal-04198663/) |
 
+## Limitations
+
+Here are some known areas of improvement for this benchmark:
+
+- [Cold start only:](https://github.com/qpsolvers/qpbenchmark/issues/101) we don't evaluate warm-start performance for now.
+- [CPU thermal throttling:](https://github.com/qpsolvers/qpbenchmark/issues/88) the benchmark currently does not check the status of CPU thermal throttling.
+    - Adding this feature is a good way to [start contributing](https://github.com/qpsolvers/qpbenchmark/labels/good%20first%20issue) to the benchmark.
+- [HPIPM evaluation:](https://github.com/qpsolvers/qpbenchmark/issues/122) currently we evaluate HPIPM against a duality-gap tolerance but the solver is asked to solve a complementarity-slackness condition.
+
+Note that this test set was spun off to benefit from the availability of [qpbenchmark](https://github.com/qpsolvers/qpbenchmark) and readily-available MPC QPs, but it does not fully reflect the use of QP solvers for MPC in production due, notably, to the cold-start-only limitation.
+
 ## Citation
 
 If you use `qpbenchmark` in your works, please cite all its contributors as follows:

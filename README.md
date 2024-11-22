@@ -61,6 +61,8 @@ If you use `qpbenchmark` in your works, please cite all its contributors as foll
 }
 ```
 
+If you contribute to this repository, don't forget to add yourself to the BibTeX above and to [`CITATION.cff`](https://github.com/qpsolvers/qpbenchmark/blob/main/CITATION.cff).
+
 ## See also
 
 Related test sets that may be relevant to your use cases:

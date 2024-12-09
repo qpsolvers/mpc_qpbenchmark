@@ -10,10 +10,39 @@ The recommended process is to install the benchmark and all solvers in an isolat
 
 ```console
 conda env create -f environment.yaml
-conda activate qpbenchmark
+conda activate mpc_qpbenchmark
 ```
 
 It is also possible to install the benchmark [from PyPI](https://github.com/qpsolvers/qpbenchmark#installation).
+
+### Adding HPIPM to the conda environment
+
+HPIPM is not packaged, but instructions to install from source are given in [hpipm](https://github.com/giaf/hpipm#python):
+
+- Clone BLASFEO: `git clone https://github.com/giaf/blasfeo.git`
+- From the BLASFEO directory, run: `make shared_library -j 4`
+- Check again that you are in your conda environment, then run:
+
+```console
+cp -f ./lib/libblasfeo.so ${CONDA_PREFIX}/lib/
+cp -f ./include/*.h ${CONDA_PREFIX}/include/
+```
+
+- Clone HPIPM: `git clone https://github.com/giaf/hpipm.git`
+- From the HPIPM directory, run: `make shared_library -j4 BLASFEO_PATH=${CONDA_PREFIX}`
+- Check again that you are in your conda environment, then run:
+
+```console
+cp -f libhpipm.so ${CONDA_PREFIX}/lib/
+cp -f ./include/*.h ${CONDA_PREFIX}/include/
+```
+
+- Go to `hpipm/interfaces/python/hpipm_python` and run `pip install .`
+- Try to import the package in Python:
+
+```py
+import hpipm_python.common as hpipm
+```
 
 ## Usage
 
@@ -42,7 +71,6 @@ Here are some known areas of improvement for this benchmark:
 - [Cold start only:](https://github.com/qpsolvers/qpbenchmark/issues/101) we don't evaluate warm-start performance for now.
 - [CPU thermal throttling:](https://github.com/qpsolvers/qpbenchmark/issues/88) the benchmark currently does not check the status of CPU thermal throttling.
     - Adding this feature is a good way to [start contributing](https://github.com/qpsolvers/qpbenchmark/labels/good%20first%20issue) to the benchmark.
-- [HPIPM evaluation:](https://github.com/qpsolvers/qpbenchmark/issues/122) currently we evaluate HPIPM against a duality-gap tolerance but the solver is asked to solve a complementarity-slackness condition.
 
 Note that this test set was spun off to benefit from the availability of [qpbenchmark](https://github.com/qpsolvers/qpbenchmark) and readily-available MPC QPs, but it does not fully reflect the use of QP solvers for MPC in production due, notably, to the cold-start-only limitation.
 

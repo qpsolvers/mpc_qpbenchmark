@@ -15,6 +15,35 @@ conda activate mpc_qpbenchmark
 
 It is also possible to install the benchmark [from PyPI](https://github.com/qpsolvers/qpbenchmark#installation).
 
+### Adding HPIPM to the conda environment
+
+HPIPM is not packaged, but instructions to install from source are given in [hpipm](https://github.com/giaf/hpipm#python):
+
+- Clone BLASFEO: `git clone https://github.com/giaf/blasfeo.git`
+- From the BLASFEO directory, run: `make shared_library -j 4`
+- Check again that you are in your conda environment, then run:
+
+```console
+cp -f ./lib/libblasfeo.so ${CONDA_PREFIX}/lib/
+cp -f ./include/*.h ${CONDA_PREFIX}/include/
+```
+
+- Clone HPIPM: `git clone https://github.com/giaf/hpipm.git`
+- From the HPIPM directory, run: `make shared_library -j4 BLASFEO_PATH=${CONDA_PREFIX}`
+- Check again that you are in your conda environment, then run:
+
+```console
+cp -f libhpipm.so ${CONDA_PREFIX}/lib/
+cp -f ./include/*.h ${CONDA_PREFIX}/include/
+```
+
+- Go to `hpipm/interfaces/python/hpipm_python` and run `pip install .`
+- Try to import the package in Python:
+
+```py
+import hpipm_python.common as hpipm
+```
+
 ## Usage
 
 Run the test set as follows:

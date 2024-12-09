@@ -10,7 +10,7 @@ The recommended process is to install the benchmark and all solvers in an isolat
 
 ```console
 conda env create -f environment.yaml
-conda activate qpbenchmark
+conda activate mpc_qpbenchmark
 ```
 
 It is also possible to install the benchmark [from PyPI](https://github.com/qpsolvers/qpbenchmark#installation).

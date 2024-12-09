@@ -3,7 +3,7 @@
 | Number of problems | 64 |
 |:-------------------|:--------------------|
 | Benchmark version  | 2.3.0 |
-| Date               | 2024-09-03 14:14:07.341611+00:00 |
+| Date               | 2024-12-09 17:05:37.261039+00:00 |
 | CPU                | [12th Gen Intel(R) Core(TM) i7-12800H](#cpu-info) |
 | Run by             | [@stephane-caron](https://github.com/stephane-caron/) |
 
@@ -64,11 +64,8 @@ All solvers were called via [qpsolvers](https://github.com/qpsolvers/qpsolvers) 
 | `bits` | 64 |
 | `brand_raw` | 12th Gen Intel(R) Core(TM) i7-12800H |
 | `count` | 20 |
-| `cpuinfo_version_string` | 9.0.0 |
 | `family` | 6 |
-| `flags` | `3dnowprefetch`, `abm`, `acpi`, `adx`, `aes`, `aperfmperf`, `apic`, `arat`, `arch_capabilities`, `arch_lbr`, `arch_perfmon`, `art`, `avx`, `avx2`, `avx_vnni`, `bmi1`, `bmi2`, `bts`, `clflush`, `clflushopt`, `clwb`, `cmov`, `constant_tsc`, `cpuid`, `cpuid_fault`, `cx16`, `cx8`, `de`, `ds_cpl`, `dtes64`, `dtherm`, `dts`, `epb`, `ept`, `ept_ad`, `erms`, `est`, `f16c`, `flexpriority`, `flush_l1d`, `fma`, `fpu`, `fsgsbase`, `fsrm`, `fxsr`, `gfni`, `hfi`, `ht`, `hwp`, `hwp_act_window`, `hwp_epp`, `hwp_notify`, `hwp_pkg_req`, `ibpb`, `ibrs`, `ibrs_enhanced`, `ibt`, `ida`, `intel_pt`, `invpcid`, `lahf_lm`, `lm`, `mca`, `mce`, `md_clear`, `mmx`, `monitor`, `movbe`, `movdir64b`, `movdiri`, `msr`, `mtrr`, `nonstop_tsc`, `nopl`, `nx`, `ospke`, `osxsave`, `pae`, `pat`, `pbe`, `pcid`, `pclmulqdq`, `pconfig`, `pdcm`, `pdpe1gb`, `pebs`, `pge`, `pku`, `pln`, `pni`, `popcnt`, `pse`, `pse36`, `pts`, `rdpid`, `rdrand`, `rdrnd`, `rdseed`, `rdtscp`, `rep_good`, `sdbg`, `sep`, `serialize`, `sha`, `sha_ni`, `smap`, `smep`, `smx`, `split_lock_detect`, `ss`, `ssbd`, `sse`, `sse2`, `sse4_1`, `sse4_2`, `ssse3`, `stibp`, `syscall`, `tm`, `tm2`, `tme`, `tpr_shadow`, `tsc`, `tsc_adjust`, `tsc_deadline_timer`, `tsc_known_freq`, `tscdeadline`, `umip`, `vaes`, `vme`, `vmx`, `vnmi`, `vpclmulqdq`, `vpid`, `waitpkg`, `x2apic`, `xgetbv1`, `xsave`, `xsavec`, `xsaveopt`, `xsaves`, `xtopology`, `xtpr` |
-| `hz_actual_friendly` | 695.9120 MHz |
-| `hz_advertised_friendly` | 695.9120 MHz |
+| `flags` | `3dnowprefetch`, `abm`, `acpi`, `adx`, `aes`, `aperfmperf`, `apic`, `arat`, `arch_capabilities`, `arch_lbr`, `arch_perfmon`, `art`, `avx`, `avx2`, `avx_vnni`, `bmi1`, `bmi2`, `bts`, `clflush`, `clflushopt`, `clwb`, `cmov`, `constant_tsc`, `cpuid`, `cpuid_fault`, `cx16`, `cx8`, `de`, `ds_cpl`, `dtes64`, `dtherm`, `dts`, `epb`, `ept`, `ept_ad`, `erms`, `est`, `f16c`, `flexpriority`, `flush_l1d`, `fma`, `fpu`, `fsgsbase`, `fsrm`, `fxsr`, `gfni`, `hfi`, `ht`, `hwp`, `hwp_act_window`, `hwp_epp`, `hwp_notify`, `hwp_pkg_req`, `ibpb`, `ibrs`, `ibrs_enhanced`, `ibt`, `ida`, `intel_pt`, `invpcid`, `lahf_lm`, `lm`, `mca`, `mce`, `md_clear`, `mmx`, `monitor`, `movbe`, `movdir64b`, `movdiri`, `msr`, `mtrr`, `nonstop_tsc`, `nopl`, `nx`, `ospke`, `osxsave`, `pae`, `pat`, `pbe`, `pcid`, `pclmulqdq`, `pconfig`, `pdcm`, `pdpe1gb`, `pebs`, `pge`, `pku`, `pln`, `pni`, `popcnt`, `pse`, `pse36`, `pts`, `rdpid`, `rdrand`, `rdrnd`, `rdseed`, `rdtscp`, `rep_good`, `sdbg`, `sep`, `serialize`, `sha`, `sha_ni`, `smap`, `smep`, `smx`, `split_lock_detect`, `ss`, `ssbd`, `sse`, `sse2`, `sse4_1`, `sse4_2`, `ssse3`, `stibp`, `syscall`, `tm`, `tm2`, `tme`, `tpr_shadow`, `tsc`, `tsc_adjust`, `tsc_deadline_timer`, `tsc_known_freq`, `tscdeadline`, `umip`, `user_shstk`, `vaes`, `vme`, `vmx`, `vnmi`, `vpclmulqdq`, `vpid`, `waitpkg`, `x2apic`, `xgetbv1`, `xsave`, `xsavec`, `xsaveopt`, `xsaves`, `xtopology`, `xtpr` |
 | `l1_data_cache_size` | 557056 |
 | `l1_instruction_cache_size` | 720896 |
 | `l2_cache_associativity` | 7 |
@@ -76,7 +73,7 @@ All solvers were called via [qpsolvers](https://github.com/qpsolvers/qpsolvers) 
 | `l2_cache_size` | 11.5 MiB |
 | `l3_cache_size` | 25165824 |
 | `model` | 154 |
-| `python_version` | 3.12.5.final.0 (64 bit) |
+| `python_version` | 3.11.10.final.0 (64 bit) |
 | `stepping` | 3 |
 | `vendor_id_raw` | GenuineIntel |
 
@@ -93,47 +90,46 @@ There are 4 settings: *default*, *high_accuracy*, *low_accuracy* and *mid_accura
 
 Solvers for each settings are configured as follows:
 
-| solver   | parameter                        | default   | high_accuracy          | low_accuracy          | mid_accuracy           |
-|:---------|:---------------------------------|:----------|:-----------------------|:----------------------|:-----------------------|
-| clarabel | ``tol_feas``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| clarabel | ``tol_gap_abs``                  | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| clarabel | ``tol_gap_rel``                  | -         | 0.0                    | 0.0                   | 0.0                    |
-| cvxopt   | ``feastol``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| daqp     | ``dual_tol``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| daqp     | ``primal_tol``                   | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| ecos     | ``feastol``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| gurobi   | ``FeasibilityTol``               | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| gurobi   | ``OptimalityTol``                | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| gurobi   | ``TimeLimit``                    | 10.0      | 10.0                   | 10.0                  | 10.0                   |
-| highs    | ``dual_feasibility_tolerance``   | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| highs    | ``primal_feasibility_tolerance`` | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| highs    | ``time_limit``                   | 10.0      | 10.0                   | 10.0                  | 10.0                   |
-| hpipm    | ``tol_comp``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| hpipm    | ``tol_eq``                       | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| hpipm    | ``tol_ineq``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| hpipm    | ``tol_stat``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| osqp     | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| osqp     | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
-| osqp     | ``time_limit``                   | 10.0      | 10.0                   | 10.0                  | 10.0                   |
-| piqp     | ``check_duality_gap``            | -         | True                   | True                  | True                   |
-| piqp     | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| piqp     | ``eps_duality_gap_abs``          | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| piqp     | ``eps_duality_gap_rel``          | -         | 0.0                    | 0.0                   | 0.0                    |
-| piqp     | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
-| proxqp   | ``check_duality_gap``            | -         | True                   | True                  | True                   |
-| proxqp   | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| proxqp   | ``eps_duality_gap_abs``          | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| proxqp   | ``eps_duality_gap_rel``          | -         | 0.0                    | 0.0                   | 0.0                    |
-| proxqp   | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
-| qpalm    | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| qpalm    | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
-| qpalm    | ``time_limit``                   | 10.0      | 10.0                   | 10.0                  | 10.0                   |
-| qpoases  | ``predefined_options``           | default   | reliable               | fast                  | -                      |
-| qpoases  | ``time_limit``                   | 10.0      | 10.0                   | 10.0                  | 10.0                   |
-| qpswift  | ``RELTOL``                       | -         | 1.7320508075688772e-09 | 0.0017320508075688772 | 1.7320508075688771e-06 |
-| scs      | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
-| scs      | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
-| scs      | ``time_limit_secs``              | 10.0      | 10.0                   | 10.0                  | 10.0                   |
+| solver   | parameter                        | default   | high_accuracy   | low_accuracy   | mid_accuracy   |
+|:---------|:---------------------------------|:----------|:----------------|:---------------|:---------------|
+| clarabel | ``tol_feas``                     | -         | 1e-09           | 0.001          | 1e-06          |
+| clarabel | ``tol_gap_abs``                  | -         | 1e-09           | 0.001          | 1e-06          |
+| clarabel | ``tol_gap_rel``                  | -         | 0.0             | 0.0            | 0.0            |
+| cvxopt   | ``feastol``                      | -         | 1e-09           | 0.001          | 1e-06          |
+| daqp     | ``dual_tol``                     | -         | 1e-09           | 0.001          | 1e-06          |
+| daqp     | ``primal_tol``                   | -         | 1e-09           | 0.001          | 1e-06          |
+| ecos     | ``feastol``                      | -         | 1e-09           | 0.001          | 1e-06          |
+| gurobi   | ``FeasibilityTol``               | -         | 1e-09           | 0.001          | 1e-06          |
+| gurobi   | ``OptimalityTol``                | -         | 1e-09           | 0.001          | 1e-06          |
+| gurobi   | ``TimeLimit``                    | 10.0      | 10.0            | 10.0           | 10.0           |
+| highs    | ``dual_feasibility_tolerance``   | -         | 1e-09           | 0.001          | 1e-06          |
+| highs    | ``primal_feasibility_tolerance`` | -         | 1e-09           | 0.001          | 1e-06          |
+| highs    | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
+| hpipm    | ``tol_dual_gap``                 | -         | 1e-09           | 0.001          | 1e-06          |
+| hpipm    | ``tol_eq``                       | -         | 1e-09           | 0.001          | 1e-06          |
+| hpipm    | ``tol_ineq``                     | -         | 1e-09           | 0.001          | 1e-06          |
+| hpipm    | ``tol_stat``                     | -         | 1e-09           | 0.001          | 1e-06          |
+| osqp     | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
+| osqp     | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
+| osqp     | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
+| piqp     | ``check_duality_gap``            | -         | True            | True           | True           |
+| piqp     | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
+| piqp     | ``eps_duality_gap_abs``          | -         | 1e-09           | 0.001          | 1e-06          |
+| piqp     | ``eps_duality_gap_rel``          | -         | 0.0             | 0.0            | 0.0            |
+| piqp     | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
+| proxqp   | ``check_duality_gap``            | -         | 1.0             | 1.0            | 1.0            |
+| proxqp   | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
+| proxqp   | ``eps_duality_gap_abs``          | -         | 1e-09           | 0.001          | 1e-06          |
+| proxqp   | ``eps_duality_gap_rel``          | -         | 0.0             | 0.0            | 0.0            |
+| proxqp   | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
+| qpalm    | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
+| qpalm    | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
+| qpalm    | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
+| qpoases  | ``predefined_options``           | default   | reliable        | fast           | -              |
+| qpoases  | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
+| scs      | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
+| scs      | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
+| scs      | ``time_limit_secs``              | 10.0      | 10.0            | 10.0           | 10.0           |
 
 ## Known limitations
 
@@ -156,7 +152,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | ecos     |                                57.8 |                               5739.4 |                                    420910.4 |                         5929937018188.9 |                      129128586020.9 |
 | gurobi   |                                93.8 |                                751.7 |                                     61294.2 |                          862419765203.1 |                       17947932483.6 |
 | highs    |                                98.4 |                                203.3 |                                     15289.3 |                          215130905960.8 |                        4488037476.2 |
-| hpipm    |                                85.9 |                               1365.8 |                                    277930.2 |                         1512614169408.3 |                       31479164121.7 |
+| hpipm    |                                87.5 |                               1171.1 |                                    255865.4 |                         1295559826350.3 |                       26962024721.6 |
 | osqp     |                               100.0 |                                  1.1 |                                       375.5 |                          633394827887.4 |                       10951932554.9 |
 | piqp     |                                96.9 |                                373.7 |                                     30601.5 |                          430567894981.5 |                        8961869808.3 |
 | proxqp   |                               100.0 |                                  5.9 |                                         1.0 |                               4279646.3 |                          47235377.5 |
@@ -178,7 +174,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | ecos     |                                 0.0 |                                199.3 |                                        13.5 |                            7357237255.0 |                        5647754491.5 |
 | gurobi   |                                40.6 |                                 26.1 |                                         2.5 |                                101622.3 |                             31094.0 |
 | highs    |                                 0.0 |                                  7.1 |                                        13.3 |                               7364918.2 |                          11063790.7 |
-| hpipm    |                                81.2 |                                 60.1 |                                         4.5 |                                  2032.3 |                                95.4 |
+| hpipm    |                                87.5 |                                 53.1 |                                         4.0 |                                  1809.5 |                                53.8 |
 | osqp     |                                85.9 |                                 32.7 |                                         3.1 |                                  3402.6 |                                94.1 |
 | piqp     |                                95.3 |                                 19.4 |                                         1.5 |                                   833.2 |                                82.4 |
 | proxqp   |                                98.4 |                                  7.4 |                                         1.9 |                                  1828.1 |                                73.4 |
@@ -200,7 +196,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | ecos     |                                25.0 |                               6744.3 |                               16963403349.0 |                           13446968382.4 |                        5668845375.1 |
 | gurobi   |                                93.8 |                                882.2 |                                2513052299.1 |                             902221821.4 |                          18460428.6 |
 | highs    |                                93.8 |                                 21.2 |                                         1.0 |                               9093401.5 |                        5854988138.2 |
-| hpipm    |                                37.5 |                               1798.5 |                                5026119080.6 |                            1804262084.4 |                        1062871153.8 |
+| hpipm    |                                87.5 |                               1798.7 |                                5026118981.7 |                            1804247847.7 |                          36860309.2 |
 | osqp     |                                87.5 |                                  1.5 |                                4251509865.0 |                            1563792743.4 |                         381352542.8 |
 | piqp     |                               100.0 |                                  7.8 |                                      1649.6 |                             201031732.8 |                          72210185.1 |
 | proxqp   |                               100.0 |                                  6.7 |                                5495333269.1 |                             164039604.4 |                          83142616.0 |
@@ -222,7 +218,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | ecos     |                                 4.7 |                               5562.3 |                                        26.6 |                            7363321078.1 |                        5647881334.2 |
 | gurobi   |                                90.6 |                                727.6 |                                         3.9 |                               1002883.5 |                             49850.2 |
 | highs    |                                 0.0 |                                195.2 |                                         1.0 |                               7637187.9 |                          11603384.1 |
-| hpipm    |                                71.9 |                               1483.4 |                                         7.9 |                               1808941.3 |                            335196.0 |
+| hpipm    |                                87.5 |                               1483.6 |                                         7.9 |                               1804334.9 |                             37904.6 |
 | osqp     |                                73.4 |                                726.5 |                                         8.3 |                               4329012.0 |                            220937.2 |
 | piqp     |                                96.9 |                                360.1 |                                         2.0 |                                533787.1 |                             61048.3 |
 | proxqp   |                                98.4 |                                183.1 |                                         3.7 |                                562543.7 |                             58525.9 |
@@ -246,7 +242,7 @@ Precentage of problems each solver is able to solve:
 | ecos     |        58 |               0 |             25 |              5 |
 | gurobi   |        94 |              41 |             94 |             91 |
 | highs    |        98 |               0 |             94 |              0 |
-| hpipm    |        86 |              81 |             38 |             72 |
+| hpipm    |        88 |              88 |             88 |             88 |
 | osqp     |       100 |              86 |             88 |             73 |
 | piqp     |        97 |              95 |            100 |             97 |
 | proxqp   |       100 |              98 |            100 |             98 |
@@ -268,7 +264,7 @@ Percentage of problems where "solved" return codes are correct:
 | ecos     |       100 |              42 |             67 |             47 |
 | gurobi   |       100 |              47 |            100 |             97 |
 | highs    |       100 |               2 |             94 |              2 |
-| hpipm    |        97 |              95 |             50 |             84 |
+| hpipm    |        97 |             100 |            100 |            100 |
 | osqp     |       100 |              94 |             88 |             80 |
 | piqp     |       100 |             100 |            100 |            100 |
 | proxqp   |       100 |             100 |            100 |            100 |
@@ -292,7 +288,7 @@ Shifted geometric mean of solver computation times (1.0 is the best):
 | ecos     |    5739.4 |           199.3 |         6744.3 |         5562.3 |
 | gurobi   |     751.7 |            26.1 |          882.2 |          727.6 |
 | highs    |     203.3 |             7.1 |           21.2 |          195.2 |
-| hpipm    |    1365.8 |            60.1 |         1798.5 |         1483.4 |
+| hpipm    |    1171.1 |            53.1 |         1798.7 |         1483.6 |
 | osqp     |       1.1 |            32.7 |            1.5 |          726.5 |
 | piqp     |     373.7 |            19.4 |            7.8 |          360.1 |
 | proxqp   |       5.9 |             7.4 |            6.7 |          183.1 |
@@ -320,7 +316,7 @@ Shifted geometric means of primal residuals (1.0 is the best):
 | ecos     |  420910.4 |            13.5 |   16963403349.0 |           26.6 |
 | gurobi   |   61294.2 |             2.5 |    2513052299.1 |            3.9 |
 | highs    |   15289.3 |            13.3 |             1.0 |            1.0 |
-| hpipm    |  277930.2 |             4.5 |    5026119080.6 |            7.9 |
+| hpipm    |  255865.4 |             4.0 |    5026118981.7 |            7.9 |
 | osqp     |     375.5 |             3.1 |    4251509865.0 |            8.3 |
 | piqp     |   30601.5 |             1.5 |          1649.6 |            2.0 |
 | proxqp   |       1.0 |             1.9 |    5495333269.1 |            3.7 |
@@ -346,7 +342,7 @@ Shifted geometric means of dual residuals (1.0 is the best):
 | ecos     | 5929937018188.9 |    7357237255.0 |  13446968382.4 |   7363321078.1 |
 | gurobi   |  862419765203.1 |        101622.3 |    902221821.4 |      1002883.5 |
 | highs    |  215130905960.8 |       7364918.2 |      9093401.5 |      7637187.9 |
-| hpipm    | 1512614169408.3 |          2032.3 |   1804262084.4 |      1808941.3 |
+| hpipm    | 1295559826350.3 |          1809.5 |   1804247847.7 |      1804334.9 |
 | osqp     |  633394827887.4 |          3402.6 |   1563792743.4 |      4329012.0 |
 | piqp     |  430567894981.5 |           833.2 |    201031732.8 |       533787.1 |
 | proxqp   |       4279646.3 |          1828.1 |    164039604.4 |       562543.7 |
@@ -372,7 +368,7 @@ Shifted geometric means of duality gaps (1.0 is the best):
 | ecos     | 129128586020.9 |    5647754491.5 |   5668845375.1 |   5647881334.2 |
 | gurobi   |  17947932483.6 |         31094.0 |     18460428.6 |        49850.2 |
 | highs    |   4488037476.2 |      11063790.7 |   5854988138.2 |     11603384.1 |
-| hpipm    |  31479164121.7 |            95.4 |   1062871153.8 |       335196.0 |
+| hpipm    |  26962024721.6 |            53.8 |     36860309.2 |        37904.6 |
 | osqp     |  10951932554.9 |            94.1 |    381352542.8 |       220937.2 |
 | piqp     |   8961869808.3 |            82.4 |     72210185.1 |        61048.3 |
 | proxqp   |     47235377.5 |            73.4 |     83142616.0 |        58525.9 |

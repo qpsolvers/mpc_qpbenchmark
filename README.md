@@ -71,7 +71,6 @@ Here are some known areas of improvement for this benchmark:
 - [Cold start only:](https://github.com/qpsolvers/qpbenchmark/issues/101) we don't evaluate warm-start performance for now.
 - [CPU thermal throttling:](https://github.com/qpsolvers/qpbenchmark/issues/88) the benchmark currently does not check the status of CPU thermal throttling.
     - Adding this feature is a good way to [start contributing](https://github.com/qpsolvers/qpbenchmark/labels/good%20first%20issue) to the benchmark.
-- [HPIPM evaluation:](https://github.com/qpsolvers/qpbenchmark/issues/122) currently we evaluate HPIPM against a duality-gap tolerance but the solver is asked to solve a complementarity-slackness condition.
 
 Note that this test set was spun off to benefit from the availability of [qpbenchmark](https://github.com/qpsolvers/qpbenchmark) and readily-available MPC QPs, but it does not fully reflect the use of QP solvers for MPC in production due, notably, to the cold-start-only limitation.
 

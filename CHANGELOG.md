@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update to qpbenchmark 2.4.0
+
 ## [2024-09-03]
 
 Starting this changelog.

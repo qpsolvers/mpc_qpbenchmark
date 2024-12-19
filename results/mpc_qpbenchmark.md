@@ -3,7 +3,7 @@
 | Number of problems | 64 |
 |:-------------------|:--------------------|
 | Benchmark version  | 2.3.0 |
-| Date               | 2024-12-19 11:28:07.050698+00:00 |
+| Date               | 2024-12-19 11:30:03.167372+00:00 |
 | CPU                | [12th Gen Intel(R) Core(TM) i7-12800H](#cpu-info) |
 | Run by             | [@stephane-caron](https://github.com/stephane-caron/) |
 
@@ -49,6 +49,7 @@ Problems arising from model predictive control in robotics.
 | proxqp   | 0.6.7                 |
 | qpalm    | 1.2.5                 |
 | qpoases  | 3.2.1                 |
+| qpswift  | 1.0.0                 |
 | quadprog | 0.1.13                |
 | scs      | 3.2.7                 |
 
@@ -67,8 +68,8 @@ All solvers were called via [qpsolvers](https://github.com/qpsolvers/qpsolvers) 
 | `flags` | `3dnowprefetch`, `abm`, `acpi`, `adx`, `aes`, `aperfmperf`, `apic`, `arat`, `arch_capabilities`, `arch_lbr`, `arch_perfmon`, `art`, `avx`, `avx2`, `avx_vnni`, `bmi1`, `bmi2`, `bts`, `clflush`, `clflushopt`, `clwb`, `cmov`, `constant_tsc`, `cpuid`, `cpuid_fault`, `cx16`, `cx8`, `de`, `ds_cpl`, `dtes64`, `dtherm`, `dts`, `epb`, `ept`, `ept_ad`, `erms`, `est`, `f16c`, `flexpriority`, `flush_l1d`, `fma`, `fpu`, `fsgsbase`, `fsrm`, `fxsr`, `gfni`, `hfi`, `ht`, `hwp`, `hwp_act_window`, `hwp_epp`, `hwp_notify`, `hwp_pkg_req`, `ibpb`, `ibrs`, `ibrs_enhanced`, `ibt`, `ida`, `intel_pt`, `invpcid`, `lahf_lm`, `lm`, `mca`, `mce`, `md_clear`, `mmx`, `monitor`, `movbe`, `movdir64b`, `movdiri`, `msr`, `mtrr`, `nonstop_tsc`, `nopl`, `nx`, `ospke`, `osxsave`, `pae`, `pat`, `pbe`, `pcid`, `pclmulqdq`, `pconfig`, `pdcm`, `pdpe1gb`, `pebs`, `pge`, `pku`, `pln`, `pni`, `popcnt`, `pse`, `pse36`, `pts`, `rdpid`, `rdrand`, `rdrnd`, `rdseed`, `rdtscp`, `rep_good`, `sdbg`, `sep`, `serialize`, `sha`, `sha_ni`, `smap`, `smep`, `smx`, `split_lock_detect`, `ss`, `ssbd`, `sse`, `sse2`, `sse4_1`, `sse4_2`, `ssse3`, `stibp`, `syscall`, `tm`, `tm2`, `tme`, `tpr_shadow`, `tsc`, `tsc_adjust`, `tsc_deadline_timer`, `tsc_known_freq`, `tscdeadline`, `umip`, `user_shstk`, `vaes`, `vme`, `vmx`, `vnmi`, `vpclmulqdq`, `vpid`, `waitpkg`, `x2apic`, `xgetbv1`, `xsave`, `xsavec`, `xsaveopt`, `xsaves`, `xtopology`, `xtpr` |
 | `l1_data_cache_size` | 557056 |
 | `l1_instruction_cache_size` | 720896 |
-| `l2_cache_associativity` | 7 |
-| `l2_cache_line_size` | 1280 |
+| `l2_cache_associativity` | 8 |
+| `l2_cache_line_size` | 2048 |
 | `l2_cache_size` | 11.5 MiB |
 | `l3_cache_size` | 25165824 |
 | `model` | 154 |
@@ -89,46 +90,47 @@ There are 4 settings: *default*, *high_accuracy*, *low_accuracy* and *mid_accura
 
 Solvers for each settings are configured as follows:
 
-| solver   | parameter                        | default   | high_accuracy   | low_accuracy   | mid_accuracy   |
-|:---------|:---------------------------------|:----------|:----------------|:---------------|:---------------|
-| clarabel | ``tol_feas``                     | -         | 1e-09           | 0.001          | 1e-06          |
-| clarabel | ``tol_gap_abs``                  | -         | 1e-09           | 0.001          | 1e-06          |
-| clarabel | ``tol_gap_rel``                  | -         | 0.0             | 0.0            | 0.0            |
-| cvxopt   | ``feastol``                      | -         | 1e-09           | 0.001          | 1e-06          |
-| daqp     | ``dual_tol``                     | -         | 1e-09           | 0.001          | 1e-06          |
-| daqp     | ``primal_tol``                   | -         | 1e-09           | 0.001          | 1e-06          |
-| ecos     | ``feastol``                      | -         | 1e-09           | 0.001          | 1e-06          |
-| gurobi   | ``FeasibilityTol``               | -         | 1e-09           | 0.001          | 1e-06          |
-| gurobi   | ``OptimalityTol``                | -         | 1e-09           | 0.001          | 1e-06          |
-| gurobi   | ``TimeLimit``                    | 10.0      | 10.0            | 10.0           | 10.0           |
-| highs    | ``dual_feasibility_tolerance``   | -         | 1e-09           | 0.001          | 1e-06          |
-| highs    | ``primal_feasibility_tolerance`` | -         | 1e-09           | 0.001          | 1e-06          |
-| highs    | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
-| hpipm    | ``tol_dual_gap``                 | -         | 1e-09           | 0.001          | 1e-06          |
-| hpipm    | ``tol_eq``                       | -         | 1e-09           | 0.001          | 1e-06          |
-| hpipm    | ``tol_ineq``                     | -         | 1e-09           | 0.001          | 1e-06          |
-| hpipm    | ``tol_stat``                     | -         | 1e-09           | 0.001          | 1e-06          |
-| osqp     | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
-| osqp     | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
-| osqp     | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
-| piqp     | ``check_duality_gap``            | -         | 1.0             | 1.0            | 1.0            |
-| piqp     | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
-| piqp     | ``eps_duality_gap_abs``          | -         | 1e-09           | 0.001          | 1e-06          |
-| piqp     | ``eps_duality_gap_rel``          | -         | 0.0             | 0.0            | 0.0            |
-| piqp     | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
-| proxqp   | ``check_duality_gap``            | -         | 1.0             | 1.0            | 1.0            |
-| proxqp   | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
-| proxqp   | ``eps_duality_gap_abs``          | -         | 1e-09           | 0.001          | 1e-06          |
-| proxqp   | ``eps_duality_gap_rel``          | -         | 0.0             | 0.0            | 0.0            |
-| proxqp   | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
-| qpalm    | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
-| qpalm    | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
-| qpalm    | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
-| qpoases  | ``predefined_options``           | default   | reliable        | fast           | -              |
-| qpoases  | ``time_limit``                   | 10.0      | 10.0            | 10.0           | 10.0           |
-| scs      | ``eps_abs``                      | -         | 1e-09           | 0.001          | 1e-06          |
-| scs      | ``eps_rel``                      | -         | 0.0             | 0.0            | 0.0            |
-| scs      | ``time_limit_secs``              | 10.0      | 10.0            | 10.0           | 10.0           |
+| solver   | parameter                        | default   | high_accuracy          | low_accuracy          | mid_accuracy           |
+|:---------|:---------------------------------|:----------|:-----------------------|:----------------------|:-----------------------|
+| clarabel | ``tol_feas``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| clarabel | ``tol_gap_abs``                  | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| clarabel | ``tol_gap_rel``                  | -         | 0.0                    | 0.0                   | 0.0                    |
+| cvxopt   | ``feastol``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| daqp     | ``dual_tol``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| daqp     | ``primal_tol``                   | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| ecos     | ``feastol``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| gurobi   | ``FeasibilityTol``               | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| gurobi   | ``OptimalityTol``                | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| gurobi   | ``TimeLimit``                    | 10.0      | 10.0                   | 10.0                  | 10.0                   |
+| highs    | ``dual_feasibility_tolerance``   | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| highs    | ``primal_feasibility_tolerance`` | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| highs    | ``time_limit``                   | 10.0      | 10.0                   | 10.0                  | 10.0                   |
+| hpipm    | ``tol_dual_gap``                 | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| hpipm    | ``tol_eq``                       | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| hpipm    | ``tol_ineq``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| hpipm    | ``tol_stat``                     | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| osqp     | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| osqp     | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
+| osqp     | ``time_limit``                   | 10.0      | 10.0                   | 10.0                  | 10.0                   |
+| piqp     | ``check_duality_gap``            | -         | True                   | True                  | True                   |
+| piqp     | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| piqp     | ``eps_duality_gap_abs``          | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| piqp     | ``eps_duality_gap_rel``          | -         | 0.0                    | 0.0                   | 0.0                    |
+| piqp     | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
+| proxqp   | ``check_duality_gap``            | -         | True                   | True                  | True                   |
+| proxqp   | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| proxqp   | ``eps_duality_gap_abs``          | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| proxqp   | ``eps_duality_gap_rel``          | -         | 0.0                    | 0.0                   | 0.0                    |
+| proxqp   | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
+| qpalm    | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| qpalm    | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
+| qpalm    | ``time_limit``                   | 10.0      | 10.0                   | 10.0                  | 10.0                   |
+| qpoases  | ``predefined_options``           | default   | reliable               | fast                  | -                      |
+| qpoases  | ``time_limit``                   | 10.0      | 10.0                   | 10.0                  | 10.0                   |
+| qpswift  | ``RELTOL``                       | -         | 1.7320508075688772e-09 | 0.0017320508075688772 | 1.7320508075688771e-06 |
+| scs      | ``eps_abs``                      | -         | 1e-09                  | 0.001                 | 1e-06                  |
+| scs      | ``eps_rel``                      | -         | 0.0                    | 0.0                   | 0.0                    |
+| scs      | ``time_limit_secs``              | 10.0      | 10.0                   | 10.0                  | 10.0                   |
 
 ## Known limitations
 
@@ -157,7 +159,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | proxqp   |                               100.0 |                                  4.4 |                                         1.0 |                                     1.0 |                                 1.0 |
 | qpalm    |                               100.0 |                                  1.0 |                                        37.5 |                                   305.1 |                                28.5 |
 | qpoases  |                                93.8 |                                586.0 |                                     61293.8 |                                201515.4 |                               380.0 |
-| qpswift  |                                 0.0 |                              13171.9 |                                   1025895.2 |                               3372832.7 |                              6359.6 |
+| qpswift  |                                46.9 |                               5864.1 |                                    532822.5 |                               1751759.0 |                              3303.1 |
 | quadprog |                                93.8 |                                583.3 |                                     61293.8 |                                201515.4 |                               380.0 |
 | scs      |                               100.0 |                                  2.3 |                                        50.7 |                                 35612.8 |                               245.2 |
 
@@ -179,7 +181,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | proxqp   |                                98.4 |                                  1.1 |                                         1.5 |                                     5.3 |                                 3.9 |
 | qpalm    |                                95.3 |                                  1.0 |                                         1.0 |                                     1.0 |                                 1.5 |
 | qpoases  |                                93.8 |                                  4.0 |                                         1.4 |                                     2.6 |                                 1.0 |
-| qpswift  |                                 0.0 |                                 90.7 |                                        23.0 |                                    41.6 |                                15.8 |
+| qpswift  |                                 0.0 |                                 40.4 |                                        12.2 |                                    23.3 |                               178.0 |
 | quadprog |                                93.8 |                                  4.0 |                                         1.4 |                                     2.6 |                                 1.0 |
 | scs      |                                98.4 |                                  1.1 |                                         1.4 |                                     1.6 |                                 1.7 |
 
@@ -201,7 +203,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | proxqp   |                               100.0 |                                  5.0 |                                5495333561.4 |                               1143644.2 |                             84063.2 |
 | qpalm    |                                59.4 |                                  1.0 |                                1551238702.9 |                               9345361.0 |                           1340345.9 |
 | qpoases  |                               100.0 |                                 15.2 |                                        16.9 |                                     1.0 |                                 1.0 |
-| qpswift  |                                 0.0 |                              15071.8 |                               40210710958.6 |                             100634600.2 |                            298157.5 |
+| qpswift  |                                46.9 |                               6709.9 |                               21361439551.0 |                              53462618.5 |                            161777.9 |
 | quadprog |                                93.8 |                                667.4 |                                2513051638.0 |                               6289367.7 |                             18634.0 |
 | scs      |                               100.0 |                                  1.5 |                                3844235068.0 |                               3435850.8 |                             48266.4 |
 
@@ -223,7 +225,7 @@ Solvers are compared over the whole test set by [shifted geometric mean](https:/
 | proxqp   |                                98.4 |                                130.4 |                                         3.7 |                                     2.0 |                                 3.1 |
 | qpalm    |                                98.4 |                                  1.0 |                                         1.5 |                                     1.0 |                                 2.3 |
 | qpoases  |                                93.8 |                                516.2 |                                         3.9 |                                     3.1 |                                 1.0 |
-| qpswift  |                                 0.0 |                              11603.6 |                                        63.0 |                                    50.1 |                                16.0 |
+| qpswift  |                                 0.0 |                               5165.9 |                                        33.5 |                                    27.5 |                               190.2 |
 | quadprog |                                93.8 |                                513.8 |                                         3.9 |                                     3.1 |                                 1.0 |
 | scs      |                               100.0 |                                  3.6 |                                         5.8 |                                     2.9 |                                 2.7 |
 
@@ -247,7 +249,7 @@ Precentage of problems each solver is able to solve:
 | proxqp   |       100 |              98 |            100 |             98 |
 | qpalm    |       100 |              95 |             59 |             98 |
 | qpoases  |        94 |              94 |            100 |             94 |
-| qpswift  |         0 |               0 |              0 |              0 |
+| qpswift  |        47 |               0 |             47 |              0 |
 | quadprog |        94 |              94 |             94 |             94 |
 | scs      |       100 |              98 |            100 |            100 |
 
@@ -269,7 +271,7 @@ Percentage of problems where "solved" return codes are correct:
 | proxqp   |       100 |             100 |            100 |            100 |
 | qpalm    |       100 |              97 |             59 |             98 |
 | qpoases  |       100 |             100 |            100 |            100 |
-| qpswift  |       100 |             100 |            100 |            100 |
+| qpswift  |       100 |              53 |            100 |             53 |
 | quadprog |       100 |             100 |            100 |            100 |
 | scs      |       100 |             100 |            100 |            100 |
 
@@ -293,7 +295,7 @@ Shifted geometric mean of solver computation times (1.0 is the best):
 | proxqp   |       4.4 |             1.1 |            5.0 |          130.4 |
 | qpalm    |       1.0 |             1.0 |            1.0 |            1.0 |
 | qpoases  |     586.0 |             4.0 |           15.2 |          516.2 |
-| qpswift  |   13171.9 |            90.7 |        15071.8 |        11603.6 |
+| qpswift  |    5864.1 |            40.4 |         6709.9 |         5165.9 |
 | quadprog |     583.3 |             4.0 |          667.4 |          513.8 |
 | scs      |       2.3 |             1.1 |            1.5 |            3.6 |
 
@@ -321,7 +323,7 @@ Shifted geometric means of primal residuals (1.0 is the best):
 | proxqp   |       1.0 |             1.5 |   5495333561.4 |            3.7 |
 | qpalm    |      37.5 |             1.0 |   1551238702.9 |            1.5 |
 | qpoases  |   61293.8 |             1.4 |           16.9 |            3.9 |
-| qpswift  | 1025895.2 |            23.0 |  40210710958.6 |           63.0 |
+| qpswift  |  532822.5 |            12.2 |  21361439551.0 |           33.5 |
 | quadprog |   61293.8 |             1.4 |   2513051638.0 |            3.9 |
 | scs      |      50.7 |             1.4 |   3844235068.0 |            5.8 |
 
@@ -347,7 +349,7 @@ Shifted geometric means of dual residuals (1.0 is the best):
 | proxqp   |       1.0 |             5.3 |      1143644.2 |            2.0 |
 | qpalm    |     305.1 |             1.0 |      9345361.0 |            1.0 |
 | qpoases  |  201515.4 |             2.6 |            1.0 |            3.1 |
-| qpswift  | 3372832.7 |            41.6 |    100634600.2 |           50.1 |
+| qpswift  | 1751759.0 |            23.3 |     53462618.5 |           27.5 |
 | quadprog |  201515.4 |             2.6 |      6289367.7 |            3.1 |
 | scs      |   35612.8 |             1.6 |      3435850.8 |            2.9 |
 
@@ -373,7 +375,7 @@ Shifted geometric means of duality gaps (1.0 is the best):
 | proxqp   |       1.0 |             3.9 |        84063.2 |            3.1 |
 | qpalm    |      28.5 |             1.5 |      1340345.9 |            2.3 |
 | qpoases  |     380.0 |             1.0 |            1.0 |            1.0 |
-| qpswift  |    6359.6 |            15.8 |       298157.5 |           16.0 |
+| qpswift  |    3303.1 |           178.0 |       161777.9 |          190.2 |
 | quadprog |     380.0 |             1.0 |        18634.0 |            1.0 |
 | scs      |     245.2 |             1.7 |        48266.4 |            2.7 |
 

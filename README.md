@@ -89,7 +89,7 @@ If you use `qpbenchmark` in your works, please cite all its contributors as foll
 }
 ```
 
-If you contribute to this repository, don't forget to add yourself to the BibTeX above and to [`CITATION.cff`](https://github.com/qpsolvers/qpbenchmark/blob/main/CITATION.cff).
+Don't forget to add yourself to the BibTeX above and to `CITATION.cff` if you contribute to this repository.
 
 ## See also
 

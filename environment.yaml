@@ -9,6 +9,8 @@ dependencies:
     - ecos >= 2.0.10
     - gurobi >= 11.0.3
     - ipython
+    - jaxopt
+    - kvxopt
     - matplotlib
     - numpy >= 1.25.2
     - osqp >= 0.6.2
@@ -22,3 +24,4 @@ dependencies:
     - pip:
         - highspy >= 1.5.2
         - qpalm >= 1.2.1
+        - qpax

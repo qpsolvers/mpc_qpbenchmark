@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2025-05-07]
+
 ### Added
 
 - solver: KVXOPT 1.3.2.1
@@ -42,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Starting this changelog.
 
-[unreleased]: https://github.com/qpsolvers/free_for_all_qpbenchmark/compare/2024-12-19...HEAD
+[unreleased]: https://github.com/qpsolvers/free_for_all_qpbenchmark/compare/2025-05-07...HEAD
+[2025-05-07]: https://github.com/qpsolvers/free_for_all_qpbenchmark/compare/2024-12-19...2025-05-07
 [2024-12-19]: https://github.com/qpsolvers/free_for_all_qpbenchmark/compare/2024-09-03...2024-12-19
 [2024-09-03]: https://github.com/qpsolvers/free_for_all_qpbenchmark/releases/tag/2024-09-03

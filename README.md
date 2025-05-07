@@ -79,7 +79,7 @@ Note that this test set was spun off to benefit from the availability of [qpbenc
 If you use `qpbenchmark` in your works, please cite all its contributors as follows:
 
 ```bibtex
-@software{qpbenchmark2024,
+@software{qpbenchmark,
   title = {{qpbenchmark: Benchmark for quadratic programming solvers available in Python}},
   author = {Caron, Stéphane and Zaki, Akram and Otta, Pavel and Arnström, Daniel and Carpentier, Justin and Yang, Fengyu and Leziart, Pierre-Alexandre},
   url = {https://github.com/qpsolvers/qpbenchmark},

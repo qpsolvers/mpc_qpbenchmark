@@ -2,8 +2,8 @@
 
 | Number of problems | 64 |
 |:-------------------|:--------------------|
-| Benchmark version  | 2.4.0 |
-| Date               | 2025-05-07 17:49:39.107801+00:00 |
+| Benchmark version  | 2.5.0 |
+| Date               | 2025-05-07 17:59:09.145836+00:00 |
 | CPU                | [11th Gen Intel(R) Core(TM) i9-11900KF @ 3.50GHz](#cpu-info) |
 | Run by             | [@stephane-caron](https://github.com/stephane-caron/) |
 

@@ -18,7 +18,6 @@ dependencies:
     - piqp >= 0.2.2
     - proxsuite >= 0.4.1
     - qpbenchmark >= 2.4.0
-    - qpoases >= 3.2.0
     - quadprog >= 0.1.11
     - scs >= 3.2.2
     - pip:

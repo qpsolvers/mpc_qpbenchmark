@@ -3,6 +3,8 @@
 This repository contains quadratic programs (QPs) arising from model predictive control in robotics, in a format suitable for [qpbenchmark](https://github.com/qpsolvers/qpbenchmark). Here is the report produced by this benchmarking tool:
 
 - 📈 <a href="./results/mpc_qpbenchmark.md"><strong>MPC test set results</strong></a>
+- 📈 [Dense subtest results](https://github.com/qpsolvers/mpc_qpbenchmark/blob/main/results/mpc_qpbenchmark_dense.md)
+- 📈 [Sparse subtest results](https://github.com/qpsolvers/mpc_qpbenchmark/blob/main/results/mpc_qpbenchmark_sparse.md)
 
 ## Installation
 

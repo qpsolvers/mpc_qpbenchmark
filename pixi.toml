@@ -29,3 +29,5 @@ qpax = "*"
 
 [tasks]
 mpc_qpbenchmark = "python ./mpc_qpbenchmark.py run"
+mpc_qpbenchmark-dense = "python ./mpc_qpbenchmark_dense.py run"
+mpc_qpbenchmark-sparse = "python ./mpc_qpbenchmark_sparse.py run"

@@ -6,22 +6,21 @@ This repository contains quadratic programs (QPs) arising from model predictive 
 
 ## Installation
 
-The recommended process is to install the benchmark and all solvers in an isolated environment using ``conda``:
+The recommended process is to install the benchmark and all solvers using [pixi](https://pixi.prefix.dev/):
 
 ```console
-conda env create -f environment.yaml
-conda activate mpc_qpbenchmark
+pixi install
 ```
 
 It is also possible to install the benchmark [from PyPI](https://github.com/qpsolvers/qpbenchmark#installation).
 
-### Adding HPIPM to the conda environment
+### Adding HPIPM to the pixi environment
 
 HPIPM is not packaged, but instructions to install from source are given in [hpipm](https://github.com/giaf/hpipm#python):
 
 - Clone BLASFEO: `git clone https://github.com/giaf/blasfeo.git`
 - From the BLASFEO directory, run: `make shared_library -j 4`
-- Check again that you are in your conda environment, then run:
+- Check that you are in your pixi environment (`pixi shell`), then run:
 
 ```console
 cp -f ./lib/libblasfeo.so ${CONDA_PREFIX}/lib/
@@ -30,7 +29,7 @@ cp -f ./include/*.h ${CONDA_PREFIX}/include/
 
 - Clone HPIPM: `git clone https://github.com/giaf/hpipm.git`
 - From the HPIPM directory, run: `make shared_library -j4 BLASFEO_PATH=${CONDA_PREFIX}`
-- Check again that you are in your conda environment, then run:
+- Check that you are in your pixi environment, then run:
 
 ```console
 cp -f libhpipm.so ${CONDA_PREFIX}/lib/
@@ -48,8 +47,10 @@ import hpipm_python.common as hpipm
 
 Run the test set as follows:
 
-```
-python ./mpc_qpbenchmark.py run
+```console
+pixi run mpc_qpbenchmark         # full test set
+pixi run mpc_qpbenchmark-dense   # dense subset
+pixi run mpc_qpbenchmark-sparse  # sparse subset
 ```
 
 The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). You can check out and post your own results in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).

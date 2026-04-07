@@ -31,3 +31,10 @@ qpax = "*"
 mpc_qpbenchmark = "python ./mpc_qpbenchmark.py run"
 mpc_qpbenchmark-dense = "python ./mpc_qpbenchmark_dense.py run"
 mpc_qpbenchmark-sparse = "python ./mpc_qpbenchmark_sparse.py run"
+
+[tasks.mpc_qpbenchmark-all]
+depends-on = [
+    "mpc_qpbenchmark",
+    "mpc_qpbenchmark-dense",
+    "mpc_qpbenchmark-sparse",
+]

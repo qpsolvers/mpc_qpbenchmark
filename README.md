@@ -51,8 +51,8 @@ Run the test set as follows:
 
 ```console
 pixi run mpc_qpbenchmark         # full test set
-pixi run mpc_qpbenchmark-dense   # dense subset
-pixi run mpc_qpbenchmark-sparse  # sparse subset
+pixi run mpc_qpbenchmark_dense   # dense subset
+pixi run mpc_qpbenchmark_sparse  # sparse subset
 ```
 
 The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). You can check out and post your own results in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).

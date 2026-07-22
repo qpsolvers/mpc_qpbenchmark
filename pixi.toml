@@ -31,12 +31,12 @@ sip_qp_python = ">= 0.0.2"
 
 [tasks]
 mpc_qpbenchmark = "python ./mpc_qpbenchmark.py run"
-mpc_qpbenchmark-dense = "python ./mpc_qpbenchmark_dense.py run"
-mpc_qpbenchmark-sparse = "python ./mpc_qpbenchmark_sparse.py run"
+mpc_qpbenchmark_dense = "python ./mpc_qpbenchmark_dense.py run"
+mpc_qpbenchmark_sparse = "python ./mpc_qpbenchmark_sparse.py run"
 
-[tasks.mpc_qpbenchmark-all]
+[tasks.mpc_qpbenchmark_all_subsets]
 depends-on = [
     "mpc_qpbenchmark",
-    "mpc_qpbenchmark-dense",
-    "mpc_qpbenchmark-sparse",
+    "mpc_qpbenchmark_dense",
+    "mpc_qpbenchmark_sparse",
 ]

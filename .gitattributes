@@ -1,2 +1,5 @@
 # SCM syntax highlighting
 pixi.lock merge=binary linguist-language=YAML linguist-generated=true -diff
+
+# Parquet result files are binary
+*.parquet binary

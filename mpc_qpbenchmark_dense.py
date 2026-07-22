@@ -44,5 +44,5 @@ if __name__ == "__main__":
     test_set_dir = os.path.dirname(test_set_path)
     main(
         test_set_path=test_set_path,
-        results_path=f"{test_set_dir}/results/qpbenchmark_results_dense.csv",
+        results_path=f"{test_set_dir}/results/qpbenchmark_results_dense.parquet",
     )

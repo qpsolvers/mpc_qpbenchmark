@@ -19,7 +19,6 @@ piqp = ">=0.2.2"
 proxsuite = ">=0.4.1"
 pyarrow = ">=14.0.0"
 python = ">=3.10"
-# qpbenchmark = ">=2.4.0"
 quadprog = ">=0.1.11"
 scs = ">=3.2.2"
 
@@ -27,6 +26,7 @@ scs = ">=3.2.2"
 highspy = ">=1.5.2"
 qpalm = ">=1.2.1"
 # qpax = "*"
+qpbenchmark = ">=2.6.0"
 sip_qp_python = ">= 0.0.2"
 
 [tasks]

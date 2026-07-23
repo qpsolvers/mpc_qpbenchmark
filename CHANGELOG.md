@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- qpbenchmark: Update to qpbenchmark 2.7.1
+
+## [2025-07-23]
+
+### Changed
+
 - qpbenchmark: Update to qpbenchmark 2.7.0
 
 ### Removed
@@ -52,7 +58,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Starting this changelog.
 
-[unreleased]: https://github.com/qpsolvers/mpc_qpbenchmark/compare/2025-05-07...HEAD
+[unreleased]: https://github.com/qpsolvers/mpc_qpbenchmark/compare/2025-07-23...HEAD
+[2025-07-23]: https://github.com/qpsolvers/mpc_qpbenchmark/releases/tag/2025-07-23
 [2025-05-07]: https://github.com/qpsolvers/mpc_qpbenchmark/releases/tag/2025-05-07
 [2024-12-19]: https://github.com/qpsolvers/mpc_qpbenchmark/releases/tag/2024-12-19
 [2024-09-03]: https://github.com/qpsolvers/mpc_qpbenchmark/releases/tag/2024-09-03

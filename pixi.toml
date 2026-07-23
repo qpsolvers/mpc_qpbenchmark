@@ -26,7 +26,7 @@ scs = ">=3.2.2"
 highspy = ">=1.5.2"
 qpalm = ">=1.2.1"
 # qpax = "*"
-qpbenchmark = ">=2.7.0"
+qpbenchmark = ">=2.7.1"
 sip_qp_python = ">= 0.0.2"
 
 [tasks]

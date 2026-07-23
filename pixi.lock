@@ -280,13 +280,13 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/wcwidth-0.8.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/gurobi/linux-64/gurobi-13.0.2-py314_0.conda
-      - pypi: https://files.pythonhosted.org/packages/1c/db/80e2bbdc6a3af43af0d21d0370825c0ca68099a5a3eb5693107e1b7a3f69/qpbenchmark-2.6.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2f/d0/f234961cb3ffbe381c3d82cd9c40fc7e67200c9f6b62a0f60235e74134b3/qpsolvers-4.13.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/53/ec/072258cbd6e407ec31e68656680d7cb1dddc41a2087c5166e0520581be3a/qpalm-1.2.6-cp314-cp314-manylinux_2_27_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/58/3b/1cdec6772bdbaf7b25dab360c59f03cadf05492dd724c6540af905389b07/pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/89/ea/6d6136f01ce82c049740b00380a39999a15c689a9a4d43fdb1ea25090c2b/highspy-1.15.1-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/99/55/db07de81b5c630da5cbf5c7df646580ca26dfaefa593667fc6f2fe016d2e/tabulate-0.10.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d3/8b/4cef0da4f4a5f3e790e91b91d2a1c1da08ba6e014a9e01c0bf6742bd6d67/sip_qp_python-0.0.2-cp312-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
+      - pypi: https://files.pythonhosted.org/packages/d6/19/23b975954baa406b4382f2b3aa2be523276113ec5771209b6526f158aa01/qpbenchmark-2.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fe/21/99a0cdaf54eb35e77623c41b5a2c9472ee4404bba687052791fe2aba6773/tqdm-4.69.0-py3-none-any.whl
 packages:
@@ -4678,20 +4678,6 @@ packages:
   license: PROPRIETARY
   size: 48046270
   timestamp: 1777597878964
-- pypi: https://files.pythonhosted.org/packages/1c/db/80e2bbdc6a3af43af0d21d0370825c0ca68099a5a3eb5693107e1b7a3f69/qpbenchmark-2.6.0-py3-none-any.whl
-  name: qpbenchmark
-  version: 2.6.0
-  sha256: 5b4099046a5ac71d1cbe986c1f9f7bb503ff57aca895d294c4aee4c3decac716
-  requires_dist:
-  - matplotlib>=3.6.2
-  - numpy>=1.25.2
-  - pandas>=1.4.3
-  - py-cpuinfo>=9.0.0
-  - pyarrow>=15.0.0
-  - qpsolvers>=4.3.1
-  - tabulate>=0.9.0
-  - tqdm>=4.67.1
-  requires_python: '>=3.9'
 - pypi: https://files.pythonhosted.org/packages/2f/d0/f234961cb3ffbe381c3d82cd9c40fc7e67200c9f6b62a0f60235e74134b3/qpsolvers-4.13.0-py3-none-any.whl
   name: qpsolvers
   version: 4.13.0
@@ -4850,6 +4836,20 @@ packages:
   - scipy
   - pytest ; extra == 'test'
   requires_python: '>=3.10'
+- pypi: https://files.pythonhosted.org/packages/d6/19/23b975954baa406b4382f2b3aa2be523276113ec5771209b6526f158aa01/qpbenchmark-2.7.0-py3-none-any.whl
+  name: qpbenchmark
+  version: 2.7.0
+  sha256: 613f0ceac33daaa83cb793e48c066cd2cfa246b869ed4402cd4e87620d4686ba
+  requires_dist:
+  - matplotlib>=3.6.2
+  - numpy>=1.25.2
+  - pandas>=1.4.3
+  - py-cpuinfo>=9.0.0
+  - pyarrow>=15.0.0
+  - qpsolvers>=4.3.1
+  - tabulate>=0.9.0
+  - tqdm>=4.67.1
+  requires_python: '>=3.9'
 - pypi: https://files.pythonhosted.org/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl
   name: py-cpuinfo
   version: 9.0.0

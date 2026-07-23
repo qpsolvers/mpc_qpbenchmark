@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - qpbenchmark: Update to qpbenchmark 2.7.0
+- Transfer copyright notices to `NOTICE` file
 
 ### Removed
 

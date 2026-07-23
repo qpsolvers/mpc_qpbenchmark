@@ -6,6 +6,8 @@ This repository contains quadratic programs (QPs) arising from model predictive 
 - 📈 [Dense subtest results](https://github.com/qpsolvers/mpc_qpbenchmark/blob/main/results/mpc_qpbenchmark_dense.md)
 - 📈 [Sparse subtest results](https://github.com/qpsolvers/mpc_qpbenchmark/blob/main/results/mpc_qpbenchmark_sparse.md)
 
+The methodology and limitations of the benchmark are described in the [qpbenchmark readme](https://github.com/qpsolvers/qpbenchmark/). This test set, in particular, does not reflect the warm-starting that is frequently used on robots that do model predictive control.
+
 ## Installation
 
 The recommended process is to install the benchmark and all solvers using [pixi](https://pixi.prefix.dev/):
@@ -16,9 +18,21 @@ pixi install
 
 It is also possible to install the benchmark [from PyPI](https://github.com/qpsolvers/qpbenchmark#installation).
 
-### Adding HPIPM to the pixi environment
+## Usage
 
-HPIPM is not packaged, but instructions to install from source are given in [hpipm](https://github.com/giaf/hpipm#python):
+Run the test set as follows:
+
+```console
+pixi run mpc_qpbenchmark         # full test set
+pixi run mpc_qpbenchmark_dense   # dense subset
+pixi run mpc_qpbenchmark_sparse  # sparse subset
+```
+
+The outcome, written to the `results/` directory, is a standardized report comparing all available solvers against the different benchmark metrics. You can check out and post your own results in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).
+
+# Adding HPIPM to the pixi environment
+
+The HPIPM solver is not packaged, but instructions to install from source are given in [hpipm](https://github.com/giaf/hpipm#python):
 
 - Clone BLASFEO: `git clone https://github.com/giaf/blasfeo.git`
 - From the BLASFEO directory, run: `make shared_library -j 4`
@@ -45,18 +59,6 @@ cp -f ./include/*.h ${CONDA_PREFIX}/include/
 import hpipm_python.common as hpipm
 ```
 
-## Usage
-
-Run the test set as follows:
-
-```console
-pixi run mpc_qpbenchmark         # full test set
-pixi run mpc_qpbenchmark_dense   # dense subset
-pixi run mpc_qpbenchmark_sparse  # sparse subset
-```
-
-The outcome is a standardized report comparing all available solvers against the different [benchmark metrics](https://github.com/qpsolvers/qpbenchmark#metrics). You can check out and post your own results in the [Results forum](https://github.com/qpsolvers/mpc_qpbenchmark/discussions/categories/results).
-
 ## Contributions
 
 The problems in this test set have been contributed by:
@@ -66,16 +68,6 @@ The problems in this test set have been contributed by:
 | ``QUADCMPC*`` | [@paLeziart](https://github.com/paLeziart) | Proposed in [#1](https://github.com/qpsolvers/mpc_qpbenchmark/issues/1), details in [this thesis](https://laas.hal.science/tel-03936109/document) |
 | ``LIPMWALK*`` | [@stephane-caron](https://github.com/stephane-caron) | Proposed in [#3](https://github.com/qpsolvers/mpc_qpbenchmark/issues/3), details in [this paper](https://hal.archives-ouvertes.fr/hal-01875387/document) |
 | ``WHLIPBAL*`` | [@stephane-caron](https://github.com/stephane-caron) | Proposed in [#4](https://github.com/qpsolvers/mpc_qpbenchmark/issues/4), details in [this paper](https://inria.hal.science/hal-04198663/) |
-
-## Limitations
-
-Here are some known areas of improvement for this benchmark:
-
-- [Cold start only:](https://github.com/qpsolvers/qpbenchmark/issues/101) we don't evaluate warm-start performance for now.
-- [CPU thermal throttling:](https://github.com/qpsolvers/qpbenchmark/issues/88) the benchmark currently does not check the status of CPU thermal throttling.
-    - Adding this feature is a good way to [start contributing](https://github.com/qpsolvers/qpbenchmark/labels/good%20first%20issue) to the benchmark.
-
-Note that this test set was spun off to benefit from the availability of [qpbenchmark](https://github.com/qpsolvers/qpbenchmark) and readily-available MPC QPs, but it does not fully reflect the use of QP solvers for MPC in production due, notably, to the cold-start-only limitation.
 
 ## Citation
 

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- qpbenchmark: Update to qpbenchmark 2.7.0
+
 ### Removed
 
 - Remove `environment.yaml`

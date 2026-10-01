@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-#
 # SPDX-License-Identifier: Apache-2.0
 
 """Sparse MPC test set."""
@@ -8,10 +5,10 @@
 import os.path
 from typing import Iterator
 
+from mpc_qpbenchmark import MpcQpbenchmark
+
 from qpbenchmark import Problem
 from qpbenchmark.benchmark import main
-
-from mpc_qpbenchmark import MpcQpbenchmark
 
 SPARSE_PREFIXES = ("QUADCMPC",)
 

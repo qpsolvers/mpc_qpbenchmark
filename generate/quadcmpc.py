@@ -1,10 +1,6 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-#
 # SPDX-License-Identifier: Apache-2.0
 
-"""
-Generate QUADCMPC problems of the test set.
+"""Generate QUADCMPC problems of the test set.
 
 Make sure you clone submodules in order to run this script.
 """
